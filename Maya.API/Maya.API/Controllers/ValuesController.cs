@@ -1,4 +1,5 @@
 ﻿using Maya.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Maya.API.Controllers
         }
 
         // GET: api/Values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Value>>> GetValue()
         {
