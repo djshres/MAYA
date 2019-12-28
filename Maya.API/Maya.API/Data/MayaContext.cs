@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Maya.API.Models;
 
-    public class MayaContext : DbContext
+public class MayaContext : DbContext
+{
+    public MayaContext(DbContextOptions<MayaContext> options)
+        : base(options)
     {
-        public MayaContext (DbContextOptions<MayaContext> options)
-            : base(options)
-        {
-        }
-
-        public DbSet<Value> Value { get; set; }
     }
+
+    public DbSet<Value> Value { get; set; }
+    public DbSet<User> Users { get; set; }
+}
