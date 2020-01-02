@@ -7,9 +7,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20191226024306_Initital.cs" />
     <Compile Remove="Migrations\20191226024306_Initital.Designer.cs" />
+    <Compile Remove="Migrations\20200101140238_ExtendedUserClass.cs" />
+    <Compile Remove="Migrations\20200101140238_ExtendedUserClass.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
