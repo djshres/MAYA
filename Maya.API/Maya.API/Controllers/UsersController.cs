@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Maya.API.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
