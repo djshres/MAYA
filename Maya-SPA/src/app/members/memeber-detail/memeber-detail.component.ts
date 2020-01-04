@@ -32,7 +32,7 @@ export class MemeberDetailComponent implements OnInit {
         imageAnimation:NgxGalleryAnimation.Slide,
         preview:false
       }
-    ],
+    ];
     this.galleryImages=[];
   }
 
