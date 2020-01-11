@@ -32,6 +32,7 @@ namespace Maya.API
             services.AddDbContext<MayaContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MayaContext")));
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();

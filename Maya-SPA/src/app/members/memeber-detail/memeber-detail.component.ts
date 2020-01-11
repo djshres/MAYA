@@ -33,7 +33,7 @@ export class MemeberDetailComponent implements OnInit {
         preview:false
       }
     ];
-    this.galleryImages=[];
+    this.galleryImages=this.getImages();
   }
 
   getImages(){

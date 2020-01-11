@@ -1,4 +1,5 @@
-﻿using Maya.API.Data;
+﻿using AutoMapper;
+using Maya.API.Data;
 using Maya.API.Dtos;
 using Maya.API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -18,11 +19,13 @@ namespace Maya.API.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
+        private readonly IMapper _mapper;
 
-        public AuthController(IAuthRepository repo,IConfiguration config)
+        public AuthController(IAuthRepository repo,IConfiguration config,IMapper mapper)
         {
             _repo = repo;
             _config = config;
+            _mapper = mapper;
         }
 
         [HttpPost("register")]
@@ -74,9 +77,12 @@ namespace Maya.API.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
+            var user = _mapper.Map<UserForListDto>(userFromRepo);
+
             return Ok(new
             {
-                token = tokenHandler.WriteToken(token)
+                token = tokenHandler.WriteToken(token),
+                user
             });
         }
     }

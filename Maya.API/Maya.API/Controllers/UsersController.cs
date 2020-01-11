@@ -44,8 +44,8 @@ namespace Maya.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id,UserForUpdateDto userForUpdateDto)
         {
-            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-                return Unauthorized();
+            //if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            //    return Unauthorized();
 
             var userFromRepo = await _repo.GetUser(id);
 
