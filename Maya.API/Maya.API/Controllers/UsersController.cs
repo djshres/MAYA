@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Maya.API.Data;
 using Maya.API.Dtos;
+using Maya.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Maya.API.Controllers
 {
     //[Authorize]
+    [ServiceFilter(typeof(LogUserActivity))]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
